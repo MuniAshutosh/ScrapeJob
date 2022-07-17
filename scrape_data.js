@@ -8,7 +8,7 @@ function isNextJobIdAvailable() {
 function getCurrentJobDetails() {
     return {
         jobTitle: document.querySelector(".jobs-unified-top-card__job-title")?.textContent.replaceAll("\n", "").trim(),
-        jobType: document.querySelector(".jobs-unified-top-card__job-insight").textContent.replaceAll("\n", " ").trim(),
+        jobType: document.querySelector(".jobs-unified-top-card__job-insight")?.textContent.replaceAll("\n", " ").trim(),
         companyEmployeeCount: document.querySelector(".jobs-unified-top-card__job-insight")?.nextElementSibling?.textContent.replaceAll("\n", " ").trim(),
         companyTitle: document.querySelector(".jobs-unified-top-card__company-name>a")?.textContent.replaceAll("\n", "").trim(),
         companyLocation: document.querySelector(".jobs-unified-top-card__company-name")?.nextElementSibling.textContent.replaceAll("\n", "").trim(),
