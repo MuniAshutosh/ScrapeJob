@@ -21,6 +21,7 @@ function fetchNextObjectDetails() {
 }
 
 function gotoNextPage() {
+    // TODO: some issue in page navigation when ... comes. Probably use XPATH by page number
     currentJobCount = 0
     document.querySelector(".artdeco-pagination__indicator.artdeco-pagination__indicator--number.active").nextElementSibling.children[0].children[0].click()
 }
