@@ -37,16 +37,20 @@ function next() {
             window.clearInterval(interval)
         else
             gotoNextPage()
-    else
+    else {
         fetchNextObjectDetails()
-    console.log(jobsDetail)
+        console.log(jobsDetail)
+        window.clearInterval(interval)
+        intervalCounter = nextIntervalTimeout()
+        interval = setInterval(next, intervalCounter)
+    }
+        
+   
 
-    clearInterval(interval);
-    intervalCounter = nextInterval();
-    interval = setInterval(next, intervalCounter);
+
 }
 
-function nextInterval() {
+function nextIntervalTimeout() {
     return Math.floor((Math.random() * 500) + 1000)
 }
 
@@ -54,11 +58,11 @@ function nextInterval() {
 
 
 function start(){
-    interval = setInterval(next, intervalCounter);
+    interval = setInterval(next, intervalCounter)
 }
 
 function pause(){
-    clearInterval(interval);
+    window.clearInterval(interval)
 }
 
 
