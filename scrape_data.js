@@ -1,12 +1,14 @@
-jobsDetail = []
-currentJobId = 0
+
+
+
 
 function isNextJobIdAvailable() {
-    return currentJobId < document.querySelectorAll(".job-card-container").length - 1
+    return currentJobCount < document.querySelectorAll(".job-card-container").length - 1
 }
 
 function getCurrentJobDetails() {
     return {
+        jobId: document.querySelectorAll(".job-card-container")[currentJobCount].dataset.jobId,
         jobTitle: document.querySelector(".jobs-unified-top-card__job-title")?.textContent.replaceAll("\n", "").trim(),
         jobType: document.querySelector(".jobs-unified-top-card__job-insight")?.textContent.replaceAll("\n", " ").trim(),
         companyEmployeeCount: document.querySelector(".jobs-unified-top-card__job-insight")?.nextElementSibling?.textContent.replaceAll("\n", " ").trim(),
@@ -19,11 +21,11 @@ function getCurrentJobDetails() {
 }
 
 function fetchNextObjectDetails() {
-    document.querySelectorAll(".job-card-container")[++currentJobId].click()
+    document.querySelectorAll(".job-card-container")[++currentJobCount].click()
 }
 
 function gotoNextPage() {
-    currentJobId = 0
+    currentJobCount = 0
     document.querySelector(".artdeco-pagination__indicator.artdeco-pagination__indicator--number.active").nextElementSibling.children[0].children[0].click()
 }
 
@@ -42,11 +44,31 @@ function next() {
     else
         fetchNextObjectDetails()
     console.log(jobsDetail)
+
+    clearInterval(interval);
+    intervalCounter = nextInterval();
+    interval = setInterval(next, intervalCounter);
 }
 
-setIntervalX = setInterval(function() {
-    next()
-}, 1000)
+function nextInterval() {
+    return Math.floor((Math.random() * 500) + 1000)
+}
 
-// To stop run below code 
-// window.clearInterval(setIntervalX)
+
+
+
+function start(){
+    interval = setInterval(next, intervalCounter);
+}
+
+function pause(){
+    clearInterval(interval);
+}
+
+
+jobsDetail = []
+currentJobCount = 0
+intervalCounter = 1000;
+interval
+
+start()
