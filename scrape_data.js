@@ -33,8 +33,10 @@ function isNextPageAvailable() {
 function next() {
     jobsDetail.push(getCurrentJobDetails())
     if (!isNextJobIdAvailable())
-        if (!isNextPageAvailable())
+        if (!isNextPageAvailable()) {
             window.clearInterval(interval)
+            console.log("JOB DONE")
+        }
         else
             gotoNextPage()
     else {
