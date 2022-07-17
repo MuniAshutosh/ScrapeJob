@@ -34,7 +34,7 @@ function next() {
     jobsDetail.push(getCurrentJobDetails())
     if (!isNextJobIdAvailable())
         if (!isNextPageAvailable())
-            window.clearInterval(setIntervalX)
+            window.clearInterval(interval)
         else
             gotoNextPage()
     else
