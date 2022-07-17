@@ -1,5 +1,5 @@
-currentJobId = 0
 jobsDetail = []
+currentJobId = 0
 
 function isNextJobIdAvailable() {
     return currentJobId < document.querySelectorAll(".job-card-container").length - 1
