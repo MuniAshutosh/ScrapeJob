@@ -11,9 +11,9 @@ function getCurrentJobDetails() {
         jobType: document.querySelector(".jobs-unified-top-card__job-insight")?.textContent.replaceAll("\n", " ").trim(),
         companyEmployeeCount: document.querySelector(".jobs-unified-top-card__job-insight")?.nextElementSibling?.textContent.replaceAll("\n", " ").trim(),
         companyTitle: document.querySelector(".jobs-unified-top-card__company-name>a")?.textContent.replaceAll("\n", "").trim(),
-        companyLocation: document.querySelector(".jobs-unified-top-card__company-name")?.nextElementSibling.textContent.replaceAll("\n", "").trim(),
+        companyLocation: document.querySelector(".jobs-unified-top-card__company-name")?.nextElementSibling?.textContent.replaceAll("\n", "").trim(),
         postedDate: document.querySelector(".jobs-unified-top-card__posted-date")?.textContent.replaceAll("\n", "").trim(),
-        applicatons: document.querySelector(".jobs-unified-top-card__posted-date")?.nextElementSibling.textContent.replaceAll("\n", "").trim(),
+        applicatons: document.querySelector(".jobs-unified-top-card__posted-date")?.nextElementSibling?.textContent.replaceAll("\n", "").trim(),
         jobDescription: document.querySelector(".jobs-description__container")?.textContent.replaceAll("\n", " ").trim(),
     }
 }
