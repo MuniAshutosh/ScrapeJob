@@ -1,7 +1,3 @@
-
-
-
-
 function isNextJobIdAvailable() {
     return currentJobCount < document.querySelectorAll(".job-card-container").length - 1
 }
