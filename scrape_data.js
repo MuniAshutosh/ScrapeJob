@@ -47,3 +47,6 @@ function next() {
 setIntervalX = setInterval(function() {
     next()
 }, 1000)
+
+// To stop run below code 
+// window.clearInterval(setIntervalX)
