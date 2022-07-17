@@ -65,6 +65,6 @@ function pause(){
 jobsDetail = []
 currentJobCount = 0
 intervalCounter = 1000;
-interval
+var interval
 
 start()
